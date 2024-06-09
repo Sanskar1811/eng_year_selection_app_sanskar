@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title> Engineering Year Selection Application </title>
+	</head>	
+	<style>
+		* { font-size : 50px ; font-family : Calibri ; }
+		body { background-color : #B5F76F ; }
+	</style>
+<body>
+<center>
+<h1>Engineering Year Selection Application </h1>
+<form onsubmit = "ye()">
+	<label for = "name"> Name </label>
+	<input type = "name"  placeholder = "Enter Your Name"  id = "name"  />
+	<br/> <br/>
+	<label for = "year"> Select a Year : </label>
+	<select id = "year">
+		<option value = "FE"> FE </option>
+		<option value = "SE"> SE </option>
+		<option value = "TE"> TE </option>
+		<option value = "BE"> BE </option>
+
+
+	</select >
+	<br/> <br/>
+	<input type = "submit" />
+</form>
+<h2 id = "msg" />
+<script>
+	function ye()
+	{
+		event.preventDefault();
+		let name = document.getElementById("name");
+		let year = document.getElementById("year");
+		let msg =  document.getElementById("msg");
+
+		if (name.value.trim() == "")
+		{
+			alert("Please Enter Name");
+			msg.innerHTML = ""; 
+			name.value = "";
+			name.focus();
+			return ;
+		}
+
+		msg.innerHTML = "Name = " +  name.value + " , " + " Engineering Year = " + year.value ;  
+
+
+	}
+
+
+	
+</script>
+</center>
+</body>
+</html>
